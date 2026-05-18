@@ -11,6 +11,7 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyBC56NEMl_s7oP3KaX4XnMX6fHhnXsvHdU",
   authDomain: "gazebo-monitor.firebaseapp.com",
+  databaseURL: "https://gazebo-monitor-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "gazebo-monitor",
   storageBucket: "gazebo-monitor.firebasestorage.app",
   messagingSenderId: "1039885078642",
