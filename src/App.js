@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { ref, onValue, set } from "firebase/database";
 
-const TOTAL_GAZEBO = 21;
+const TOTAL_GAZEBO = 22;
 const OPERATOR_PIN = "1234"; // Ganti PIN sesuai keinginan
 
 const initialGazebos = Array.from({ length: TOTAL_GAZEBO }, (_, i) => ({
@@ -146,7 +146,7 @@ export default function App() {
           <div style={s.landingCard}>
             <div style={s.emoji}>🏖️</div>
             <h1 style={s.landingTitle}>Gazebo Monitor-Wahoo Waterworld</h1>
-            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />21 Unit — Realtime</p>
+            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />22 Unit — Realtime</p>
             <div style={s.dot(connected)} />
             <p style={{ ...s.connTxt, color: connected ? "#51cf66" : "#aaa" }}>
               {connected ? "Terhubung ke server" : "Menghubungkan..."}
