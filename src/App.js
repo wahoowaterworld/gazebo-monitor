@@ -145,7 +145,7 @@ export default function App() {
         <div style={s.landing}>
           <div style={s.landingCard}>
             <div style={s.emoji}>🏖️</div>
-            <h1 style={s.landingTitle}>Gazebo Monitor</h1>
+            <h1 style={s.landingTitle}>Gazebo Monitor-Wahoo Waterworld</h1>
             <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />21 Unit — Realtime</p>
             <div style={s.dot(connected)} />
             <p style={{ ...s.connTxt, color: connected ? "#51cf66" : "#aaa" }}>
@@ -206,7 +206,7 @@ export default function App() {
         <div style={s.headerLeft}>
           <span style={{ fontSize: 28 }}>🏖️</span>
           <div>
-            <div style={s.headerTitle}>Gazebo Monitor</div>
+            <div style={s.headerTitle}>Gazebo Monitor-Wahoo Waterworld</div>
             <div style={s.headerSub}>
               {mode === "operator"
                 ? "Mode Operator — Tap gazebo untuk update"
