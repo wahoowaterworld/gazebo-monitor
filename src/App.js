@@ -5,9 +5,10 @@ import { ref, onValue, set } from "firebase/database";
 const TOTAL_GAZEBO = 22;
 const OPERATOR_PIN = "8569"; // Ganti PIN sesuai keinginan
 
-const initialGazebos = Array.from({ length: TOTAL_GAZEBO }, (_, i) => ({
-  id: i + 1,
-  nama: `Gazebo ${String(i + 1).padStart(2, "0")}`,
+const initialGazebos = [
+  ...Array.from({ length: 21 }, (_, i) => ({
+    id: i + 1,
+    nama: `Gazebo ${String(i + 1).padStart(2, "0")}`,
     status: "kosong",
     penyewa: "",
     jamMulai: "",
@@ -156,8 +157,8 @@ export default function App() {
         <div style={s.landing}>
           <div style={s.landingCard}>
             <div style={s.emoji}>🏖️</div>
-            <h1 style={s.landingTitle}>Gazebo Monitor-Wahoo Waterworld</h1>
-            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />22 Unit — Realtime</p>
+            <h1 style={s.landingTitle}>Gazebo Monitor</h1>
+            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />21 Unit — Realtime</p>
             <div style={s.dot(connected)} />
             <p style={{ ...s.connTxt, color: connected ? "#51cf66" : "#aaa" }}>
               {connected ? "Terhubung ke server" : "Menghubungkan..."}
@@ -217,7 +218,7 @@ export default function App() {
         <div style={s.headerLeft}>
           <span style={{ fontSize: 28 }}>🏖️</span>
           <div>
-            <div style={s.headerTitle}>Gazebo Monitor-Wahoo Waterworld</div>
+            <div style={s.headerTitle}>Gazebo Monitor</div>
             <div style={s.headerSub}>
               {mode === "operator"
                 ? "Mode Operator — Tap gazebo untuk update"
@@ -283,7 +284,7 @@ export default function App() {
               }}
               onClick={() => openModal(g)}
             >
-              <div style={s.cardNum}>G{String(g.id).padStart(2, "0")}</div>
+              <div style={s.cardNum}>{g.nama || ("G" + String(g.id).padStart(2, "0"))}</div>
               <div style={{ ...s.cardStatus, color: rented ? "#ff6b6b" : "#51cf66" }}>
                 {rented ? "● Tersewa" : "● Kosong"}
               </div>
@@ -306,7 +307,7 @@ export default function App() {
       {showModal && selected && mode === "operator" && (
         <div style={s.overlay} onClick={() => setShowModal(false)}>
           <div style={s.modal} onClick={(e) => e.stopPropagation()}>
-            <h3 style={s.modalTitle}>Edit Gazebo {String(selected.id).padStart(2, "0")}</h3>
+            <h3 style={s.modalTitle}>Edit {selected.nama || ("Gazebo " + String(selected.id).padStart(2, "0"))}</h3>
 
             <label style={s.lbl}>Status Gazebo</label>
             <div style={{ display: "flex", gap: 8 }}>
