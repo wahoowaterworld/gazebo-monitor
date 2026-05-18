@@ -6,7 +6,7 @@ const TOTAL_GAZEBO = 22;
 const OPERATOR_PIN = "8569"; // Ganti PIN sesuai keinginan
 
 const initialGazebos = [
-  ...Array.from({ length: 21 }, (_, i) => ({
+  ...Array.from({ length: 22 }, (_, i) => ({
     id: i + 1,
     nama: `Gazebo ${String(i + 1).padStart(2, "0")}`,
     status: "kosong",
@@ -158,7 +158,7 @@ export default function App() {
           <div style={s.landingCard}>
             <div style={s.emoji}>🏖️</div>
             <h1 style={s.landingTitle}>Gazebo Monitor</h1>
-            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />21 Unit — Realtime</p>
+            <p style={s.landingSub}>Sistem Monitoring Penyewaan Gazebo<br />22 Unit — Realtime</p>
             <div style={s.dot(connected)} />
             <p style={{ ...s.connTxt, color: connected ? "#51cf66" : "#aaa" }}>
               {connected ? "Terhubung ke server" : "Menghubungkan..."}
