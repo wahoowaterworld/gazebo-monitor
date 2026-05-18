@@ -3,7 +3,7 @@ import { db } from "./firebase";
 import { ref, onValue, set } from "firebase/database";
 
 const TOTAL_GAZEBO = 22;
-const OPERATOR_PIN = "1234"; // Ganti PIN sesuai keinginan
+const OPERATOR_PIN = "8569"; // Ganti PIN sesuai keinginan
 
 const initialGazebos = Array.from({ length: TOTAL_GAZEBO }, (_, i) => ({
   id: i + 1,
