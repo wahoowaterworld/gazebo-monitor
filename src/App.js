@@ -2,17 +2,28 @@ import { useState, useEffect } from "react";
 import { db } from "./firebase";
 import { ref, onValue, set } from "firebase/database";
 
-const TOTAL_GAZEBO = 23;
+const TOTAL_GAZEBO = 22;
 const OPERATOR_PIN = "1234"; // Ganti PIN sesuai keinginan
 
 const initialGazebos = Array.from({ length: TOTAL_GAZEBO }, (_, i) => ({
   id: i + 1,
-  status: "kosong",
-  penyewa: "",
-  jamMulai: "",
-  jamSelesai: "",
-  catatan: "",
-}));
+  nama: `Gazebo ${String(i + 1).padStart(2, "0")}`,
+    status: "kosong",
+    penyewa: "",
+    jamMulai: "",
+    jamSelesai: "",
+    catatan: "",
+  })),
+  {
+    id: 22,
+    nama: "Laguna Gazebo",
+    status: "kosong",
+    penyewa: "",
+    jamMulai: "",
+    jamSelesai: "",
+    catatan: "",
+  },
+];
 
 export default function App() {
   const params = new URLSearchParams(window.location.search);
